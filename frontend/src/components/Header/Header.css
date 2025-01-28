@@ -1,0 +1,88 @@
+.header {
+    height: 34vw;
+    margin: 30px auto;
+    background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080') no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth */
+    border-radius: 15px; /* Smooth corners */
+    overflow: hidden; /* Ensures rounded corners apply to content */
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+}
+
+.header-contents {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5vw;
+    max-width: 50%;
+    top: 5%; /* Adjusted to give space from the top */
+    left: 6vw;
+    
+    animation: fadeIn 3s;
+}
+
+
+.header-contents h2 {
+    font-weight: 700;
+    color: #ff6347; /* Golden color for elegance */
+    font-size: max(4.5vw, 22px);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Adds a shadow for better readability */
+}
+
+.header-contents p {
+    color: #f0f0f0; /* Light grey for better contrast */
+    font-size: 1.2vw;
+    line-height: 1.5;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Subtle shadow for readability */
+}
+
+.header-contents button {
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 1vw 2.5vw;
+    background-color: #ff4500; /* Vibrant orange-red for the button */
+    font-size: max(1.2vw, 14px);
+    border-radius: 30px; /* Rounded button */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth to the button */
+}
+
+.header-contents button:hover {
+    background-color: #ff6347; /* Slightly lighter red on hover */
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+@media (max-width: 1050px) {
+    .header-contents {
+        max-width: 60%;
+    }
+}
+
+@media (max-width: 750px) {
+    .header-contents {
+        max-width: 70%;
+    }
+
+    .header-contents p {
+        display: none;
+    }
+
+    .header-contents button {
+        padding: 2vw 4vw;
+    }
+}
